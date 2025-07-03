@@ -1,0 +1,117 @@
+header.md {
+  max-width: 100%;
+  text-align: center;
+  padding: 1rem 5vw;
+}
+
+aside {
+  position: fixed;
+  margin: 1rem;
+  top: 0;
+  left: 0;
+  width: 2.2rem;
+  height: 2.5rem;
+  background: var(--text-color);
+  color: var(--bg-color);
+  overflow: hidden;
+  transition: width 0.2s ease-in 0.1s,
+              height 0.2s ease-in;
+
+}
+
+aside.open {
+  height: 95%;
+  width: 25vw;
+  transition: width 0.2s ease-in,
+              height 0.2s ease-in 0.1s;
+}
+
+aside .sm,
+aside .md,
+aside .lg {
+  color: var(--bg-color);
+}
+
+aside > button.side-modal {
+  position: absolute;
+  padding: 0.5rem;
+  right: 0;
+  background: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transform: translate(5px, -3px) scale(-1.0);
+  z-index: 10;
+}
+
+.theme-switcher {
+  border: red solid 2px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+aside.open > button.side-modal {
+  transform: scale(1.0);
+}
+
+aside > hr {
+  border-color: var(--bg-color);
+}
+
+
+aside > .brief,
+aside > nav {
+  width: 100%;
+  height: 50%;
+  padding: 2rem 2rem 1rem;
+  overflow-y:hidden;
+}
+
+aside > .brief {
+  padding-top: 4rem;
+}
+
+aside  h3.md {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+aside > .brief > p,
+aside > nav > ul {
+  list-style: none;
+  padding-bottom: 5rem;
+  overflow-y: auto;
+  height: 90%;
+}
+
+aside > nav > ul > li {
+  margin: 0.5rem 0;
+}
+
+aside > nav > ul a:hover{
+  text-decoration: underline;
+}
+
+aside > nav > .btn-lg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin-left: -2rem;
+  border: solid var(--text-color) 0.4rem;
+}
+
+aside > nav > .btn-lg:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  aside.open {
+    width: 45vw;
+  }
+
+}
+

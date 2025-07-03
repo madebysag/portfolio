@@ -28,6 +28,7 @@ body.dark-theme .logo {
 nav ul {
 	display: flex;
 	list-style-type: none;
+	align-items: center;
 }
 
 nav {
@@ -38,6 +39,10 @@ nav {
 nav ul li {
 	height: fit-content;
 	overflow: hidden;
+}
+
+.theme-switcher {
+  margin: 0 1.5rem;
 }
 
 nav ul li a {
