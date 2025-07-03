@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	font-family: "Noto Sans", sans-serif;
+	--white: #ffffff;
+	--gold: #D4BA1C;
+	--black: #050512;
+	--black-hover: hsl(240, 56%, 7%);
+	--silver: #B7B7B7;
+	--silver-hover: hsl(0, 0%, 60%);
+	--bg-color:var(--silver);
+	--bg-color-hover:var(--black-hover);
+	--text-color:var(--black);
+	--light-text-color: #ffffff;
+	--accent-color:var(--gold);
+}
+
+.dark-theme {
+	--bg-color-hover:var(--silver);
+	--bg-color:var(--black);
+	--text-color:var(--silver);
+	/*--light-text-color:var(--black);*/
+	/*--accent-color:var(--gold);*/
+}
+
+body {
+	background: var(--bg-color);
+	/*overflow: hidden;*/
+}
+
+.sm,
+.md,
+.lg,
+.xxl {
+	font-size: 0.8rem;
+	font-weight: 100;
+	text-decoration: none;
+	color: var(--text-color);
+	max-width: 55vw;
+}
+
+.md {
+	font-size: 1rem;
+	font-weight: 400;
+}
+.lg {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.xxl {
+	font-size: 4rem;
+	font-weight: 900;
+}
+
+.btn-lg {
+	text-align: center;
+	padding: 1rem 0rem;
+	width: 55vw;
+	background: var(--text-color);
+	color: var(--bg-color);
+	text-decoration: none;
+	font-weight: 700;
+	transition: border 0.2s ease-in;
+}
+
+.btn-lg:hover {
+	border: var(--text-color) 3px solid;
+}
+
+
+@media screen and (max-width: 768px) {
+	.btn-lg {
+		width: 80vw;
+	}
+	.xxl {
+		font-size: 3rem;
+	}
+
+}
