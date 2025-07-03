@@ -15,11 +15,13 @@ class ThemeSwiter{
   width: 30px;
   display: inline-block;
   border-radius: 50%;
+  cursor: pointer;
 }`
 
-		const sheet = window.document.styleSheets[0];
+		const styleSheet = document.createElement("style")
+		styleSheet.textContent = this.style
 
-		sheet.insertRule(this.style)
+		document.head.appendChild(styleSheet)
 
 		const bindedHandleClick = this.handleClick.bind(this)
 		
