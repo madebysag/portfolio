@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.card-container {
+	width: 100%;
+	display: grid;
+	align-content: center;
+	justify-content: space-around;
+	text-align: center;
+	padding: 50px;
+	background: #eeeeee;
+	padding-bottom: 300px;
+	overflow-x: hidden;
+}
+
+.card-face {
+/*	background: #cccccc;
+	border: 3px #aaaaaa solid;*/
+	height: 300px;
+	width: 400px;
+	margin: 30px;
+	font: 400 3rem serif;
+	transition: all 0.2 ease-in;
+}

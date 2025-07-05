@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #222;
+    width: 100%;
+    padding: 30px;
+
+}
+
+section {
+    background-color: #333;
+    width: 100%;
+    height: 20rem;
+    display: grid;
+    place-items: center;
+    border-radius: 100px;
+    margin: 20px 0;
+    padding: 50px;
+}
+
+.wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.wrapper > div {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: #555;
+    border-radius: 50px;
+    white-space: wrap;
+    padding: 20px;
+}

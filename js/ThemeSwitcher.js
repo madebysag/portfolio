@@ -6,11 +6,9 @@ class ThemeSwiter{
 		this.style = `
 			.theme-switcher {
   background-color: var(--text-color);
-  /*background-color: var(--bg-color);*/
   background-image: url("../static/images/theme icons.png");
   background-size: 200% 100%;
   background-position: -5% 0;
-  /*background-position: 95% 0;*/
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -25,9 +23,13 @@ class ThemeSwiter{
 
 		const bindedHandleClick = this.handleClick.bind(this)
 		
-
 		// Important Note - using this.handleClick here result in context issues
 		this.el.addEventListener("click", bindedHandleClick)	// Did I just use the func.bind().... I am a senior dev now lmaoo
+		
+		// Check Initial Preference
+		const isDarkModePreferred = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+		if (isDarkModePreferred) bindedHandleClick()
 	}
 
 	handleClick() {
