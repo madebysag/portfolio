@@ -13,13 +13,14 @@ body {
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
-	z-index: 10;
+	/*z-index: 5;*/
 }
 
 .cool-ft {
 	width: 100vw;
 	height: 5vh;
 	background-image: linear-gradient( transparent, var(--bg-color));
+	/*backdrop-filter: blur(5px);*/
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -239,6 +240,7 @@ body.dark-theme section#about .btn-lg{
 section#services ul{
 	list-style-type: none;
 	font-weight: 700;
+	height: 200vh;
 }
 
 body.dark-theme section#services ul{
@@ -254,7 +256,6 @@ footer {
 	color: var(--bg-color);
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
 	align-items: center;
 	margin: 0 auto 1rem;
 	padding: 5rem 0 1rem;
@@ -323,7 +324,6 @@ footer > ul li > .md {
 		width: 100%;
 		height: 100%;
 		justify-content: center;
-		/*pointer-events: none;*/
 	}
 
 
@@ -346,7 +346,6 @@ footer > ul li > .md {
 		bottom: 5vh;
 		left: 50vw;
 		transform: translate(-50%);
-		/*background: blue;*/
 	}
 	body.dark-theme nav.mobile > a.btn-lg {
 		color: var(--white);

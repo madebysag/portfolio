@@ -38,12 +38,17 @@ const observer = new IntersectionObserver(entries => {
 
 		const gradientValue = entry.target.dataset.gradient
 
-		if (entry.isIngtersecting) changeBg(0, gradientValue, 200);
-		else changeBg(gradientValue, 0, 200);
+		// if (entry.isIntersecting) tweenBg("reverse");
+		// else tweenBg()
+
+
+		if (entry.isIntersecting) (changeBg(gradientValue, 0, 400), coolBg.style.zIndex = -10)
+		else changeBg(0, gradientValue, 400);
+
 	})
 },
 {
-	threshold: 0.5
+	threshold: 0.1
 })
 
 
@@ -52,9 +57,6 @@ const gradientSections = document.querySelectorAll("[data-gradient]")
 gradientSections.forEach(section => {
 	observer.observe(section)
 })
-
-console.log(gradientSections)
-
 
 
 
@@ -76,11 +78,14 @@ const changeBg = (initialValue, endValue, duration) => {
 
 			coolBg.style.backgroundImage = `radial-gradient( transparent ${newValue - 10}%, var(--bg-color) ${newValue + 50}%, var(--accent-color) ${newValue + 200}%)`;
 
+			console.log("iffffffff")
+
 		}else {
 			cancelAnimationFrame(animID)
 			animID = null;
 			newValue = endValue
 			coolBg.style.backgroundImage = `radial-gradient( transparent ${newValue - 10}%, var(--bg-color) ${newValue + 50}%, var(--accent-color) ${newValue + 200}%)`;
+			console.log("elseeeeeee")
 		}
 	}
 
@@ -93,6 +98,45 @@ function lerp(norm, min, max) {
 	return min * ( 1 - norm) + max * norm;
 }
 
-// function lerp(norm, min, max) {
-// 	return (max - min) * norm + min;
-// }
+
+function tweenBg(direction) {
+	let start, target;
+
+	if (direction == "reverse") {
+		start = 200; target = 0;
+	} else {
+		start = 0; target = 200;
+	}
+
+	const duration = 200,
+		change = target - start,
+		startTime = new Date();
+
+	function update() {
+		let time = new Date() - startTime;
+
+		if(time < duration) {
+			const newValue = linearTween(time, start, change, duration)
+			coolBg.style.backgroundImage = `radial-gradient( transparent ${newValue - 10}%, var(--bg-color) ${newValue + 50}%, var(--accent-color) ${newValue + 200}%)`;
+
+			requestAnimationFrame(update)
+		} else {
+			time = duration;
+
+			const newValue = linearTween(time, start, change, duration)
+			coolBg.style.backgroundImage = `radial-gradient( transparent ${newValue - 10}%, var(--bg-color) ${newValue + 50}%, var(--accent-color) ${newValue + 200}%)`;
+
+		}
+	}
+
+	update()
+
+
+}
+
+// simple linear tweening - no easing
+// t: current time, b: beginning value, c: change in value, d: duration
+function linearTween(t, b, c, d) {
+	return c * t / d + b;
+}
+
