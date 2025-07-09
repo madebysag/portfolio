@@ -1,0 +1,42 @@
+/* Befores */
+section#services ul li.current:nth-child(1)::before {
+	background-image: url("../static/images/logo design 1.jpg");
+}
+
+section#services ul li.current:nth-child(2)::before {
+	background-image: url("../static/images/brand design 1.jpg");
+}
+
+section#services ul li.current:nth-child(3)::before {
+	background-image: url("../static/images/visual design 1.jpg");
+}
+
+section#services ul li.current:nth-child(4)::before {
+	background-image: url("../static/images/web design 1.jpg");
+}
+
+section#services ul li.current:nth-child(5)::before {
+	background-image: url("../static/images/web development 1.jpg");
+}
+
+/* Afters */
+
+section#services ul li.current:nth-child(1)::after {
+	background-image: url("../static/images/logo design 2.jpg");
+}
+
+section#services ul li.current:nth-child(2)::after {
+	background-image: url("../static/images/brand design 2.jpg");
+}
+
+section#services ul li.current:nth-child(3)::after {
+	background-image: url("../static/images/visual design 2.jpg");
+}
+
+section#services ul li.current:nth-child(4)::after {
+	background-image: url("../static/images/web design 2.jpg");
+}
+
+section#services ul li.current:nth-child(5)::after {
+	background-image: url("../static/images/web development 2.jpg");
+}

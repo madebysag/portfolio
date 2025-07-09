@@ -25,6 +25,7 @@ body {
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
+	z-index: 5;
 }
 
 /*
@@ -68,6 +69,10 @@ nav ul li {
 
 .theme-switcher {
   margin: 0 1.5rem;
+}
+
+nav ul li a:last-child {
+	padding: 0 1rem;
 }
 
 nav ul li a {
@@ -183,6 +188,11 @@ section#work {
 section#work .project {
 	margin: 0.8rem;
 }
+
+section#work .project > img {
+	width: clamp(300px, 30vw, 500px);
+}
+
 section#work .lg {
 	margin: -0.5rem 0;
 }
@@ -240,7 +250,35 @@ body.dark-theme section#about .btn-lg{
 section#services ul{
 	list-style-type: none;
 	font-weight: 700;
-	height: 200vh;
+	height: fit-content;
+}
+
+section#services ul li {
+	padding: 15rem 0 15rem;
+	position: relative;
+}
+
+section#services ul li.current {
+	padding: 15rem 0 15rem;
+}
+
+section#services ul li.current::before,
+section#services ul li.current::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-105%, -40%);
+	height: 10rem;
+	width: 10rem;
+	background: transparent no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+section#services ul li.current::after {
+	right: 0;
+	transform: translate(105%, -40%);
 }
 
 body.dark-theme section#services ul{
@@ -360,5 +398,14 @@ footer > ul li > .md {
 		padding-top: 15vh;
 	}
 
+	section#services ul li.current::before,
+	section#services ul li.current::after {
+		width: 8rem;
+		height: 8rem;
+		transform: translate(12%, -140%);
+	}
+	section#services ul li.current::after {
+		transform: translate(12%, 40%);
+	}
 
 }
