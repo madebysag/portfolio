@@ -1,4 +1,5 @@
 import ThemeSwitcher from "./ThemeSwitcher.js"
+import ProjectViewer from "./ProjectViewer.js"
 
 const body = document.querySelector("body")
 const nav = document.querySelector("nav")
@@ -61,6 +62,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		hamburgerList.forEach((li, index) => {
 			li.style.animationDelay = `${index * 0.1}s`
+
+			li.addEventListener("click", () => {
+
+				nav.classList.remove("mobile")
+				hamburger.classList.remove("active")
+			})
 		})
 
 	})
@@ -75,6 +82,16 @@ window.addEventListener("DOMContentLoaded", () => {
 	})
 })
 
+// Project Viewing
+const loadingElement = document.querySelector("section#work > .project-modal > .loading")
+const viewerElement = document.querySelector("section#work > .project-modal")
+
+const projectViewer = new ProjectViewer(loadingElement, viewerElement)
+const projects = document.querySelectorAll("section#work > .project")
+
+projects.forEach(project => {
+	projectViewer.observe(project)
+})
 
 
 // Utils Functions

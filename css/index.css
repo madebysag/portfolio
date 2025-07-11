@@ -176,13 +176,26 @@ main > .md {
 	font-weight: 700;
 }
 
+.bouncing.sm {
+	font-weight: 400;
+  text-align: center;
+  position: absolute;
+  bottom: 5vh;
+  animation: bouncing .8s ease-in-out infinite alternate;
+}
+@keyframes bouncing {
+	0% {transform: translate(0, 0.5rem);}
+	100% {transform: translate(0, -0.5rem);}
+}
+
 /*
 	work Section
 */
 section#work {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	align-items: baseline;
+	justify-content: space-evenly;
 }
 
 section#work .project {
@@ -200,6 +213,85 @@ section#work .sm {
 	font-weight: 700;
 }
 
+section#work .project-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(50px);
+	text-align: center;
+	z-index: 25;
+	opacity: 0%;
+	display: none;
+	transition: opacity 4s ease-in;
+}
+
+section#work .project-modal > .loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+section#work .project-modal > .desc {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+section#work .project-modal > .desc .md {
+	max-width: 30rem;
+}
+
+section#work .project-modal.active {
+	display: block;
+	opacity: 100%;
+}
+
+section#work .project-modal > iframe {
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	width: 90%;
+	height: 100%;
+}
+
+section#work .project-modal > .close {
+	border-radius: 50%;
+	border: none;
+	background: var(--bg-color);
+	width: 3rem;
+	height: 3rem;
+	position: fixed;
+	right: 10vw;
+	top: 5vh;
+	display: inline-block;
+	cursor: pointer;
+	z-index: 35;
+}
+
+section#work .project-modal > .close > span {
+	display: block;
+	position: absolute;
+	background: var(--text-color);
+	height: 0.3rem;
+	width: 1.8rem;
+}
+
+section#work .project-modal > .close > span:nth-child(1) {
+	transform: translate(35%, -35%) rotate(45deg);
+}
+
+section#work .project-modal > .close > span:nth-child(2) {
+	transform: translate(35%, -35%) rotate(-45deg);
+}
 
 /*
 	Playground Section
@@ -256,10 +348,7 @@ section#services ul{
 section#services ul li {
 	padding: 15rem 0 15rem;
 	position: relative;
-}
-
-section#services ul li.current {
-	padding: 15rem 0 15rem;
+	font-weight: 900;
 }
 
 section#services ul li.current::before,

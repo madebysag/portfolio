@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    /* width: 100v; */
+}
+
+section {
+    /* border: red solid 2px; */
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+div {
+    /* border: red solid 2px; */
+    overflow-y: hidden;
+}
+
+span {
+    /* border: red solid 2px; */
+    font-size: 6rem;
+    transform: translateY(3rem);
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+span.show {
+    /* border: red solid 2px; */
+    transform: translateY(0);
+}
+
+/* @keyframes slide-up {
+    from {
+        transform: translateY(3rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+} */
