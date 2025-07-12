@@ -6,7 +6,7 @@ class ThemeSwiter{
 		this.style = `
 			.theme-switcher {
   background-color: var(--text-color);
-  background-image: url("../static/images/theme icons.png");
+  background-image: url("./static/images/theme icons.png");
   background-size: 200% 100%;
   background-position: -5% 0;
   height: 30px;
