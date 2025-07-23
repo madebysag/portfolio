@@ -5,8 +5,6 @@ export default class Counter {
         this.height = this.element.clientHeight
         this.length = this.numbers.length
         this.numberHeight = this.element.clientHeight / this.length
-
-        console.log(this.numberHeight);
     }
 
     goto(value){

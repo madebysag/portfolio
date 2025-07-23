@@ -6,41 +6,39 @@
 
 body {
     background-color: #333;
-    /* width: 100v; */
 }
 
 section {
-    /* border: red solid 2px; */
-    height: 100vh;
+    height: 30vh;
     width: 100%;
     display: grid;
     align-content: center;
     justify-content: center;
+    margin: 30vh 0;
 }
 
-div {
-    /* border: red solid 2px; */
-    overflow-y: hidden;
+
+.animate-words {
+    margin: 30vh 0;
 }
 
-span {
-    /* border: red solid 2px; */
-    font-size: 6rem;
-    transform: translateY(3rem);
-    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.animate-words div.mask {
     display: inline-block;
+    overflow: hidden;
 }
 
-span.show {
-    /* border: red solid 2px; */
+.animate-words span {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0%;
+    filter: blur(10px);
+    transition: transform .3s ease-in, 
+                opacity .3s ease-in, 
+                filter .3s ease-in;
+}
+
+.animate-words span.show {
     transform: translateY(0);
+    opacity: 100%;
+    filter: blur(0px);
 }
-
-/* @keyframes slide-up {
-    from {
-        transform: translateY(3rem);
-    }
-    to {
-        transform: translateY(0);
-    }
-} */

@@ -1,0 +1,34 @@
+.accordion-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accordion-container {
+    position: relative;
+    padding: 10px;
+}
+
+.accordion {
+    border-top: grey 1px solid;
+    transition: height .2s ease-in;
+    overflow: hidden;
+}
+
+.accordion:first-child {
+    border: none;
+}
+    
+.accordion-header {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.accordion-arrow {
+    position: absolute;
+    right: 10px;
+}
+.accordion-content {
+    padding-bottom: 10px;
+    
+}

@@ -5,6 +5,7 @@ const spaces = {
     unit: document.getElementById("unit")
 }
 const progress = document.getElementById("progress")
+const play = document.getElementById("play")
 
 // Counters
 const unitCounter = new Counter(spaces.unit)
@@ -17,7 +18,28 @@ progress.addEventListener("input", e => {
     hundredthCounter.goto(e.target.value);
 })
 
+const count = (secs) => {
+    let id;
+    
+    let percent = 0
 
-function clamp(min, max, factor) {
-	return Math.min(max, Math.max(min, factor))
+    id = setInterval(()=> {
+        percent += secs / 10000;
+
+        if (percent < secs / 1000) {
+            hundredthCounter.goto(percent);
+            unitCounter.goto(percent);
+            tensCounter.goto(percent);
+
+        }else {
+
+            clearInterval(id)
+        }
+    }, 100)
+     
+
 }
+
+play.addEventListener("click", () => {
+    count(1000)
+})
