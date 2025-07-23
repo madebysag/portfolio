@@ -32,20 +32,20 @@ class Carousel {
 
         this.bindedDragLogic = this.dragLogic.bind(this)
 
-        this.container.addEventListener("mousedown", e => {
+        this.container.addEventListener("pointerdown", e => {
             this.initialPos = e.clientX
             this.initialX = this.container.getBoundingClientRect().x
 
-            this.container.addEventListener("mousemove", this.bindedDragLogic)
+            this.container.addEventListener("pointermove", this.bindedDragLogic)
 
             e.preventDefault()
         })
 
 
 
-        this.container.addEventListener("mouseup", e => {
+        this.container.addEventListener("pointerup", e => {
 
-            this.container.removeEventListener("mousemove", this.bindedDragLogic)
+            this.container.removeEventListener("pointermove", this.bindedDragLogic)
 
             //the three scenerio
             if(Math.abs(this.distance) > (this.slideWidth * 0.5)) {

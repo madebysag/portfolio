@@ -95,8 +95,8 @@ main {
 
 
  .pic-selector {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     margin: 0.3rem 0.2rem;
     border: var(--black) 1px solid;
     border-radius: 50%;
