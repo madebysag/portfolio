@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="index.js"></script>
+    <style>
+
+        :root {
+            --blue: #86afed;
+            --white: #fff;
+            --light-grey: #f9f8ff;
+            --grey: #e0e3f1;
+            --black: #666666;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: var(--black);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-grey);
+        }
+
+        .form-container {
+            margin: 15vh 0 5vh;
+            width: 40vw;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 0 4px hsla(0, 0%, 0%, 0.1);
+        }
+
+        .form-container > h3 {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: var(--blue);
+            background-color: var(--grey);
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        .login, .register {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .register {
+            display: none;
+            opacity: 0;
+        }
+
+        .form-group {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .form-group > label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--white);
+            padding: 0 10px;
+            color: var(--black);
+            font: 400 1rem serif;
+            pointer-events: none;
+            transition: transform .1s ease-in;
+        }
+
+        .form-group > input {
+            width: 100%;
+            padding: 10px;
+            font: 400 1rem serif;
+            border: solid 2px var(--grey);
+        }
+
+        p.question {
+            margin: 0.8rem 0 30px;
+        }
+
+        p.question > a {
+            color: var(--blue);
+            text-decoration: underline;
+        }
+
+        input[type="submit"] {
+            margin: -20px;
+            width: calc(100% + 40px);
+            padding: 20px;
+            color: var(--white);
+            font: bold 1.2rem serif ;
+            text-align: center;
+            background-color: var(--blue);
+            border: none;
+            cursor: pointer;
+        }
+
+        input:focus + label,
+        input:active + label {
+            transform: translate(-15px, -20px) scale(0.8);
+        }
+
+        input[type="submit"]:hover {
+            opacity: .8;
+
+        }
+
+        eye-icon {
+            position: absolute;
+            height: 20px;
+            right: -10px;
+            top: 25%;
+        }
+
+        eye-icon > svg {
+            height: 100%;
+            stroke: var(--grey);
+        }
+
+    </style>
+    <title>Login Anim</title>
+</head>
+<body>
+    <div class="form-container">
+
+        <h3>The M-ERP</h3>
+        
+        <form action="post">
+
+            <div class="login">
+
+                <div class="form-group">
+                    <input type="text" id="loginName" name="name" placeholder="Username or Email" class="username">
+                    <label for="loginName">Username or Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <eye-icon color="var(--black)"></eye-icon>
+                    <input type="password" name="name" id="loginPassword">
+                    <label for="loginPassword">Password</label>
+                </div>
+
+                <p class="question">Yet to register? <a href="#Register">Click here.</a></p>
+                <input type="submit" value="Login">
+            </div>
+            
+            <div class="register">
+
+                <div class="form-group">
+                    <input type="text" id="registerName" name="name" placeholder="Username or Email" class="username">
+                    <label for="registerName">Username or Email</label>
+                </div>
+
+                <div class="form-group">
+                    <eye-icon color="var(--black)"></eye-icon>
+                    <input type="password" name="password" id="registerPassword">
+                    <label for="registerPassword">Enter password</label>
+                </div>
+
+                <div class="form-group">
+                    <eye-icon color="var(--black)"></eye-icon>
+                    <input type="password" name="password2" id="registerPassword2">
+                    <label for="registerPassword2">Confirm password</label>
+                </div>
+
+                <p class="question">Already registered? Log in by <a href="#Login">Clicking here.</a></p>
+                <input type="submit" value="Register">
+            </div>
+            
+        </form>
+        
+    </div>
+</body>
+</html>
