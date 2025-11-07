@@ -104,9 +104,12 @@ main {
     background-color: var(--white);
     cursor: pointer;
    border: red solid 1px;
+   transistion: width .2s ease-in;
  }
 
  .pic-selector.active {
+    border-radius: 10px;
+    width: 50px;
     background-color: var(--black);
  }
 

@@ -1,7 +1,22 @@
+/*body {
+  width: 100vw;
+  height: 100vh;
+}*/
+
+
+/*main {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}*/
+
 header.md {
-  max-width: 100%;
   text-align: center;
   padding: 1rem 5vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 aside {
@@ -88,12 +103,24 @@ aside > nav > ul {
   height: 90%;
 }
 
-aside > nav > ul > li {
+aside > nav > ul > li,
+aside > nav > ul details {
   margin: 0.5rem 0;
 }
 
 aside > nav > ul a:hover{
   text-decoration: underline;
+}
+
+aside > nav > ul details li{
+  margin-left: 30px;
+}
+
+aside > nav > ul li a.active {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
 }
 
 aside > nav > .btn-lg {
@@ -109,6 +136,17 @@ aside > nav > .btn-lg {
 aside > nav > .btn-lg:hover {
   text-decoration: underline;
 }
+
+iframe#main {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: visible;
+  display: block;
+}
+
+
+
+
 
 @media screen and (max-width: 768px) {
   aside.open {

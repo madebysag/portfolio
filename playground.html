@@ -10,8 +10,8 @@
 </head>
 <body>
 	<main>
-		<header class="md">
-			Playground | Rotating Cube
+		<header id="title" class="md">
+			Playground | Carousel
 		</header>
 
 		<aside>
@@ -28,32 +28,33 @@
 			<span class="theme-switcher"></span>
 			<div class="brief">
 				<h3 class="md">BRIEF</h3>
-				<p class="md">Under heavy construction. Stay tuned!!!</p>
-				<!-- <p class="md">When a 3d Cube Rotates, it gives a feeling of happiness and joy.</p> -->
+				<p id="brief" class="md">Check out the listed links, but still under heavy construction. Stay tuned!!!</p>
 			</div>
 
 			<hr />
 
 			<nav>
 				<h3 class="md">LIST</h3>
-				<ul>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
-					<li><a href="" class="md">Coming Soon</a></li>
+				<ul id="projectLinks">
+					<details open>
+						<summary>UI Components</summary>
+						<li><a href="./Playground/Carousel/index.html" data-brief="Still under construction" class="active md">Carousel</a></li>
+						<li><a href="./Playground/Accordion/index.html" data-brief="A little better than the native element" class="md">Accordion</a></li>
+					</details>
+					<li><a href="./Playground/Login Anim/index.html" data-brief="Smooth transistion between Login and Register Page" class="md">Login and Register Screen</a></li>
+					<li><a href="./Playground/Multi Step/index.html" data-brief="TO DO; Smoothtransistion between steps" class="md">Multi Step Prompt</a></li>
+					<li><a href="./Playground/Text Animation/index.html" data-brief="Texts be popping up!!" class="md">Text Animation</a></li>
+					<li><a href="./Playground/Scroll Animations/index.html" data-brief="Scroll based animations" class="md">Scroll Animation</a></li>
+					<li><a href="./Playground/Counter/index.html" data-brief="Can serve as a loading screen animations, BUT WHY WOULD YOU EVER DO THAT??" class="md">Counter</a></li>
 				</ul>
 
 				<a href="#" class="btn-lg">Say Hello</a>
 			</nav>
 		</aside>
 
-		<main class="container">
-			<iframe src="" frameborder="0"></iframe>
-		</main>
+		<div class="container">
+			<iframe load="lazy" src="./Playground/Carousel/index.html" id="main" frameborder="0"></iframe>
+		</div>
 	</main>
 </body>
 </html>
